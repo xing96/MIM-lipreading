@@ -34,7 +34,7 @@ The GLMIM will be dropped after training.
 - To obtain better results, you could decay the learing rate while the accuracy is not on the increase.
 - After training several epochs, testing the model a few times during each epoch rather than testing the model at the end of each epoch.
 
-##Models
+## Models
 Models are availbale at [GooleDrive](https://drive.google.com/drive/folders/1injmbeusVXCEHQUftRhosfb3aBtE5qGg?usp=sharing). To evaluate the model, set `path` as the <font color='green'>file location</font> and `test` as <font color='#6060B1'>True</font>:
 ```
 parser.add_argument('--path', default=r'file/location', type=str, help='path to Baseline, empty for training')
