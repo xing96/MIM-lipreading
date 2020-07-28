@@ -18,14 +18,17 @@ Some codes of this respository is based on [mpc001's](https://github.com/mpc001/
 ## Training
 In order to better illustrate our proposed GLMIM, we trained the Baseline firstly, then the LMIM was applied to the Baseline. Finally, the GMIM was applied to them. We trained the model with the LRW  as an example.
 - **Baseline (LRW/Baseline/)**
+
 The configurations has been explained with annotations throughly at the top of `main.py`. After filling your own confugurations at each stage, you can start training the model with
 ```
 python main.py
 ```  
 
 - **Baseline + LMIM (/LRW/Baseline_LMIM)**
+
 After training the Baseline, please reload the Baseline model and train it with the LMIM simultaneously
 - **Baseline + LMIM +GMIM (/LRW/Baseline_GLMIM)**
+
 Reloading the two models you obtained at previous stage, training the total models.
 
 The GLMIM will be dropped after training.
