@@ -15,7 +15,6 @@ from model import *
 from dataset import *
 from cvtransforms import *
 
-
 SEED = 1
 torch.manual_seed(SEED)
 torch.cuda.manual_seed(SEED)
