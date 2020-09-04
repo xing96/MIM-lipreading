@@ -20,13 +20,13 @@ class LipreadingDataset(Dataset):
             lines = [line.strip().split(',') for line in lines]
             pinyins = sorted(np.unique([line[2] for line in lines]))
             # data ['fileName','startFrame','endFrame','label']
-            self.data = [(line[0], int(float(line[3]) * 25) + 1, int(float(line[4]) * 25) + 1, pinyins.index(line[2]))
+            self.data = [[line[0], int(float(line[3]) * 25) + 1, int(float(line[4]) * 25) + 1, pinyins.index(line[2])]
                          for line in lines]
             # At training stage, We discard samples with frames less than 30
             if augment:
                 self.data = list(filter(lambda data: data[2] - data[1] <= self.padding, self.data))
             else:
-                for i, (_, op, ed, __, ___) in enumerate(self.data):
+                for i, (_, op, ed, __) in enumerate(self.data):
                     if ed - op > self.padding:
                         self.data[i][2] = op + 30
             self.lengths = [data[2] - data[1] for data in self.data]
